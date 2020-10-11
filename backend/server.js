@@ -15,12 +15,7 @@ app.get('/api/products/:id', (req, res) => {
   const product = products.find(product => product._id === id)
 
   if (product) {
-    res.status(200).json({
-      status: 'success',
-      data: {
-        product,
-      },
-    })
+    res.status(200).json(product)
   } else {
     res.status(404).json({
       status: 'error',
