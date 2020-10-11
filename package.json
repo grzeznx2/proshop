@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/grzeznx2/proshop#readme",
   "dependencies": {
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
