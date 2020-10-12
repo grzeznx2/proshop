@@ -4,6 +4,8 @@ import { Row, Col } from 'react-bootstrap'
 
 import { listProducts } from '../actions/productActions'
 
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 import Product from '../components/Product'
 
 const Homescreen = () => {
@@ -18,9 +20,9 @@ const Homescreen = () => {
     <>
       <h1>Latest Products</h1>
       {loading ? (
-        <h3>Loading...</h3>
+        <Loader />
       ) : error ? (
-        <h3>{error}</h3>
+        <Message variant="danger">{error}</Message>
       ) : (
         <Row>
           {products &&
