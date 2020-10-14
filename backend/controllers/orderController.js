@@ -32,3 +32,15 @@ export const addOrderItems = asyncHandler(async (req, res) => {
     res.status(201).json(newOrder)
   }
 })
+
+export const getOrderById = asyncHandler(async (req, res, next) => {
+  const { id } = req.params
+  const order = await Order.findById(id).populate('user', 'name email')
+  console.log('ELO')
+  if (!order) {
+    res.status = 404
+    throw new Error('There is no order with provided ID')
+  }
+
+  res.json(order)
+})
